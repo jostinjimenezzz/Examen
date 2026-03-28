@@ -27,4 +27,27 @@ public class Medicamento {
     @Column(name = "plan")
     private Integer plan;
 
+    public String getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public Integer getPlan() {
+        return plan;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPlan(Integer plan) {
+        this.plan = plan;
+    }
 }

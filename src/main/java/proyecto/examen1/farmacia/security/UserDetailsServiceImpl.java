@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import proyecto.practica.documentos.data.UsuarioRepository;
-import proyecto.practica.documentos.logic.Usuario;
+import proyecto.examen1.farmacia.data.UsuarioRepository;
+import proyecto.examen1.farmacia.logic.Usuario;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

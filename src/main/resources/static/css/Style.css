@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header */
+header {
+    padding: 0;
+    margin: 0;
+}
+
+/* Nav */
+nav {
+    background-color: #1a5276;
+    padding: 6px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.nav-title {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+ul.Menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+ul.Menu li {
+    font-size: 13px;
+    position: relative;
+}
+
+ul.Menu li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 4px 16px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+ul.Menu li ul {
+    display: none;
+    position: absolute;
+    background-color: #1a5276;
+    min-width: 120px;
+    z-index: 100;
+    list-style: none;
+    padding: 0;
+    right: 0;
+}
+
+ul.Menu li:hover ul {
+    display: block;
+}
+
+ul.Menu li ul li a {
+    padding: 6px 16px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+/* Footer */
+footer {
+    background-color: #1a5276;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 11px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Main */
+main {
+    padding: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Formulario de login */
+.form {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 220px;
+    text-align: center;
+}
+
+.form-icon {
+    margin-bottom: 12px;
+}
+
+.form-icon img {
+    width: 50px;
+    height: auto;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #cc6600;
+    text-align: left;
+    margin: 6px 0 2px;
+}
+
+.field input {
+    width: 100%;
+    padding: 4px;
+    font-size: 13px;
+    border: 1px solid #aaa;
+}
+
+.field input:hover {
+    background-color: #dce8f5;
+}
+
+.form-submit {
+    margin-top: 10px;
+}
+
+/* Botón */
+.button {
+    background-color: #1a5276;
+    color: white;
+    border: none;
+    padding: 5px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #2471a3;
+}
+
+/* Error */
+.error p {
+    color: red;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* Sección */
+.section {
+    background-color: #1a5276;
+    color: white;
+    font-weight: bold;
+    padding: 5px 8px;
+    font-size: 13px;
+    margin-bottom: 8px;
+}

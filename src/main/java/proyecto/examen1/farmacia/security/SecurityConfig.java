@@ -15,16 +15,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(customizer -> customizer
-                        .requestMatchers("/", "/css/**", "/images/**").permitAll()
+                        .requestMatchers("/login", "/css/**", "/images/**").permitAll()
                         .anyRequest().authenticated()
                 ).formLogin(customizer -> customizer
-                        .loginPage("/")
-                        .loginProcessingUrl("/login")
+                        .loginPage("/login")
                         .permitAll()
-                        .defaultSuccessUrl("/presentation/documentos/show")
+                        .defaultSuccessUrl("/presentation/plan/show")
                 ).logout(customizer -> customizer
                         .permitAll()
-                        .logoutSuccessUrl("/")
+                        .logoutSuccessUrl("/login")
                 ).csrf(customizer -> customizer.disable());
         return http.build();
     }

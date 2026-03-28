@@ -3,7 +3,7 @@ package proyecto.examen1.farmacia.security;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import proyecto.practica.documentos.logic.Usuario;
+import proyecto.examen1.farmacia.logic.Usuario;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -29,4 +29,27 @@ public class Usuario {
     @Column(name = "rol", nullable = false, length = 10)
     private String rol;
 
+    public String getId() {
+        return id;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }
