@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{presentation/fragments :: head}"></head>
+
+<body>
+<header th:replace="~{presentation/fragments :: header}"></header>
+<nav th:replace="~{presentation/fragments :: nav}"></nav>
+
+<main class="plan-main">
+
+    <div class="farmacia-titulo">
+        <span>Farmacia: </span>
+        <span th:text="${farmacia != null ? farmacia.nombre : ''}"></span>
+    </div>
+
+    <div class="busqueda">
+        <form method="POST" action="/presentation/plan/buscar">
+            <span class="label-naranja">Paciente:</span>
+            <input type="text" name="cedula" th:value="${cedula}"/>
+            <input type="submit" value="Buscar" class="button"/>
+            <!-- Nombre del paciente o mensaje de error -->
+            <span th:if="${paciente != null}"
+                  th:text="${paciente.nombre}"
+                  class="nombre-paciente">
+            </span>
+            <span th:if="${pacienteNoEncontrado != null}"
+                  class="error-texto">
+                Paciente no encontrado
+            </span>
+        </form>
+    </div>
+
+    <div th:if="${medicamentos != null && !medicamentos.isEmpty()}" class="medicamentos">
+
+        <form method="POST" action="/presentation/plan/registrar">
+            <div class="fila-medicamento">
+                <span class="label-naranja">Medicamento:</span>
+                <select name="pacienteMedicamentoId">
+                    <option th:each="m : ${medicamentos}"
+                            th:value="${m.id}"
+                            th:text="${m.medicamento.nombre + ' (' + m.medicamento.plan + ' + 1) [' + m.dosisafavor + ']'}">
+                    </option>
+                </select>
+                <span class="label-naranja">Cant. Dosis:</span>
+                <input type="number" name="cantidad" value="1" min="1" style="width:60px"/>
+            </div>
+            <div class="fila-botones">
+                <input type="submit" value="Registrar" class="button"/>
+            </div>
+        </form>
+
+        <form method="POST" action="/presentation/plan/entregar">
+            <div class="fila-medicamento">
+                <select name="pacienteMedicamentoId">
+                    <option th:each="m : ${medicamentos}"
+                            th:value="${m.id}"
+                            th:text="${m.medicamento.nombre + ' (' + m.medicamento.plan + ' + 1) [' + m.dosisafavor + ']'}">
+                    </option>
+                </select>
+            </div>
+            <div class="fila-botones">
+                <input type="submit" value="Entregar" class="button"/>
+            </div>
+        </form>
+
+        <div th:if="${errorRegalia != null}" class="error-texto">
+            <span th:text="${errorRegalia}"></span>
+        </div>
+
+    </div>
+
+</main>
+
+<footer th:replace="~{presentation/fragments :: footer}"></footer>
+</body>
+</html>

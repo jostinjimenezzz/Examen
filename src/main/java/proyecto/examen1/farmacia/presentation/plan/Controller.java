@@ -12,14 +12,12 @@ import proyecto.examen1.farmacia.security.UserDetailsImp;
 @org.springframework.stereotype.Controller("planController")
 @RequestMapping("/presentation/plan")
 public class Controller {
-/*
+
     @Autowired
     private Service service;
 
     @GetMapping("/show")
-    public String show(Model model,
-                       HttpSession session,
-                       @AuthenticationPrincipal UserDetailsImp userDetails) {
+    public String show(Model model, HttpSession session, @AuthenticationPrincipal UserDetailsImp userDetails) {
 
         String usuarioId = userDetails.getUsuario().getId();
         model.addAttribute("farmacia", service.farmaciaDeUsuario(usuarioId));
@@ -41,23 +39,19 @@ public class Controller {
     }
 
     @PostMapping("/buscar")
-    public String buscar(@RequestParam("cedula") String cedula,
-                         HttpSession session) {
+    public String buscar(@RequestParam("cedula") String cedula, HttpSession session) {
         session.setAttribute("cedulaPaciente", cedula);
         return "redirect:/presentation/plan/show";
     }
 
     @PostMapping("/registrar")
-    public String registrar(@RequestParam("pacienteMedicamentoId") Integer id,
-                            @RequestParam("cantidad") Integer cantidad,
-                            HttpSession session) {
+    public String registrar(@RequestParam("pacienteMedicamentoId") Integer id, @RequestParam("cantidad") Integer cantidad, HttpSession session) {
         service.registrarCompra(id, cantidad);
         return "redirect:/presentation/plan/show";
     }
 
     @PostMapping("/entregar")
-    public String entregar(@RequestParam("pacienteMedicamentoId") Integer id,
-                           HttpSession session) {
+    public String entregar(@RequestParam("pacienteMedicamentoId") Integer id, HttpSession session) {
         String error = service.entregarRegalia(id);
         if (error != null) {
             session.setAttribute("errorRegalia", error);
@@ -76,6 +70,4 @@ public class Controller {
             model.addAttribute("pacienteNoEncontrado", true);
         }
     }
-
- */
 }

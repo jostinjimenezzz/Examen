@@ -28,9 +28,6 @@ public class Service {
         pacienteMedicamentos.save(pm);
     }
 
-    // Entregar regalía: valida disponibilidad y resta según el plan
-    // El plan indica cuántas dosis se necesitan para recibir una regalía
-    // Ej: plan=2 significa "2+1", necesita 2 dosis acumuladas para entregar 1
     public String entregarRegalia(Integer pacienteMedicamentoId) {
         Pacientemedicamento pm = pacienteMedicamentos.findById(pacienteMedicamentoId).orElseThrow();
         int plan = pm.getMedicamento().getPlan();
@@ -39,7 +36,7 @@ public class Service {
         }
         pm.setDosisafavor(pm.getDosisafavor() - plan);
         pacienteMedicamentos.save(pm);
-        return null; // null significa éxito, sin mensaje de error
+        return null;
     }
 
     public Farmacia farmaciaDeUsuario(String usuarioId) {
